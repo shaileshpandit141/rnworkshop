@@ -3,7 +3,7 @@ export default {
     core: {
       foreground: "#0b1220",
       background: "#ffffff",
-      surface: "#ffffff",
+      surface: "#f9f9f9",
       header: "#f9f9f9",
       tab: "#f9f9f9",
       border: "#e6e6e6",
@@ -51,7 +51,7 @@ export default {
     core: {
       foreground: "#f8fafc",
       background: "#01040aff",
-      surface: "#0f1724",
+      surface: "#0f0f0f",
       header: "#0f0f0f",
       tab: "#0f0f0f",
       border: "#1f2937",
