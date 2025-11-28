@@ -2,7 +2,7 @@ import { Text, View } from '@/components/ui';
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-const SettingScreen = () => {
+const SettingsScreen = () => {
   return (
     <View style={styles.container}>
       <Text>settings</Text>
@@ -10,7 +10,7 @@ const SettingScreen = () => {
   )
 }
 
-export default SettingScreen;
+export default SettingsScreen;
 
 const styles = StyleSheet.create({
   container: {

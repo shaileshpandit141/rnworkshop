@@ -32,7 +32,7 @@ export default function TabLayout() {
           backgroundColor: colors.core.tab,
           borderBottomWidth: 0,
           borderTopWidth: .5,
-          borderBottomColor: colors.core.border,
+          borderTopColor: colors.core.border,
         },
       }}>
       <Tabs.Screen
@@ -48,7 +48,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="setting"
+        name="settings"
         options={{
           title: "settings",
           tabBarLabel: "settings",

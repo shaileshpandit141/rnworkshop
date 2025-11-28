@@ -32,7 +32,7 @@ const routes: Route[] = [
       },
       {
         name: "settings",
-        path: "/setting",
+        path: "/settings",
         icon: {
           start: "settings",
           end: "arrow-forward",
@@ -45,7 +45,7 @@ const routes: Route[] = [
     routes: [
       {
         name: "other",
-        path: "/",
+        path: "/other",
         icon: {
           start: "link",
           end: "arrow-forward",
