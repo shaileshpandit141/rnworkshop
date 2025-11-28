@@ -1,4 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
+import { ExternalPathString, RelativePathString } from "expo-router";
 
 type IoniconName = keyof typeof Ionicons.glyphMap;
 
@@ -9,7 +10,7 @@ interface Icon {
 
 export interface Route {
   name: string;
-  path: string;
+  path: RelativePathString | ExternalPathString;
   icon: Icon;
 }
 
@@ -24,7 +25,7 @@ const screens: Screen[] = [
     routes: [
       {
         name: "screens",
-        path: "/",
+        path: "./",
         icon: {
           start: "link",
           end: "arrow-forward",
@@ -32,7 +33,7 @@ const screens: Screen[] = [
       },
       {
         name: "settings",
-        path: "/settings",
+        path: "./settings",
         icon: {
           start: "settings",
           end: "arrow-forward",
@@ -45,7 +46,7 @@ const screens: Screen[] = [
     routes: [
       {
         name: "other",
-        path: "/other",
+        path: "./other",
         icon: {
           start: "link",
           end: "arrow-forward",
