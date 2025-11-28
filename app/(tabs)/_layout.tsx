@@ -9,7 +9,7 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: colors.tint,
+        tabBarActiveTintColor: colors.brand.primary,
         headerShown: true,
         headerTitleAlign: "center",
         headerShadowVisible: false,
@@ -22,16 +22,17 @@ export default function TabLayout() {
         },
         headerStyle: {
           height: 80,
-          backgroundColor: colors.headerBackground,
+          backgroundColor: colors.core.header,
           borderBottomWidth: .5,
-          borderBottomColor: colors.border,
+          borderBottomColor: colors.core.border,
         },
         tabBarStyle: {
           elevation: 0,
           shadowOpacity: 0,
-          backgroundColor: colors.tabBackground,
-          borderBottomWidth: .5,
-          borderBottomColor: colors.border,
+          backgroundColor: colors.core.tab,
+          borderBottomWidth: 0,
+          borderTopWidth: .5,
+          borderBottomColor: colors.core.border,
         },
       }}>
       <Tabs.Screen
