@@ -10,7 +10,7 @@ const Screen = () => {
   )
 }
 
-export default Screen
+export default Screen;
 
 const styles = StyleSheet.create({
   container: {

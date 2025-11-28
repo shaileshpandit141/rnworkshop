@@ -1,4 +1,3 @@
-import { useClientOnlyValue } from '@/hooks/useClientOnlyValue';
 import useColors from '@/hooks/useColors';
 import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
@@ -11,20 +10,21 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: colors.tint,
-        // Disable the static render of the header on web
-        // to prevent a hydration error in React Navigation v6.
-        headerShown: useClientOnlyValue(false, true),
+        headerShown: true,
         headerTitleAlign: "center",
         headerShadowVisible: false,
         animation: "shift",
+        headerTitleStyle: {
+          textTransform: "capitalize",
+        },
+        tabBarLabelStyle: {
+          textTransform: "capitalize",
+        },
         headerStyle: {
           height: 80,
           backgroundColor: colors.headerBackground,
           borderBottomWidth: .5,
           borderBottomColor: colors.border,
-        },
-        headerTitleStyle: {
-          textTransform: "capitalize",
         },
         tabBarStyle: {
           elevation: 0,
@@ -32,9 +32,6 @@ export default function TabLayout() {
           backgroundColor: colors.tabBackground,
           borderBottomWidth: .5,
           borderBottomColor: colors.border,
-        },
-        tabBarLabelStyle: {
-          textTransform: "capitalize",
         },
       }}>
       <Tabs.Screen
