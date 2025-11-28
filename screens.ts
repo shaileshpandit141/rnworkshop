@@ -7,18 +7,18 @@ interface Icon {
   end: IoniconName;
 }
 
-interface SubRoute {
+export interface Route {
   name: string;
   path: string;
   icon: Icon;
 }
 
-interface Route {
+export interface Screen {
   title: string;
-  routes: SubRoute[];
+  routes: Route[];
 }
 
-const routes: Route[] = [
+const screens: Screen[] = [
   {
     title: "system",
     routes: [
@@ -55,4 +55,4 @@ const routes: Route[] = [
   },
 ];
 
-export default routes;
+export default screens;
