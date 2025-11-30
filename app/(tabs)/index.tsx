@@ -17,6 +17,7 @@ const Screen = () => {
         <GroupSection
           key={index}
           title={screen.title}
+          containerStyle={{paddingBottom: 12}}
         >
           <View style={[styles.routeContainer, { borderColor: colors.core.border }]}>
             {screen.routes.map((route, index) => (
@@ -38,6 +39,7 @@ export default Screen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 12,
   },
   routeContainer: {
     borderWidth: 1,

@@ -38,8 +38,6 @@ export { GroupSection };
 const styles = StyleSheet.create({
     container: {
         rowGap: 8,
-        paddingInline: 8,
-        paddingTop: 12,
     },
     title: {
         textTransform: "capitalize",
