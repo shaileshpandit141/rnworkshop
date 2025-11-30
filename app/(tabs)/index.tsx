@@ -1,5 +1,5 @@
 import Route from '@/components/Route';
-import { Text, View } from '@/components/ui';
+import { GroupSection, View } from '@/components/ui';
 import useColors from '@/hooks/useColors';
 import screens from '@/screens';
 import React from 'react';
@@ -14,14 +14,10 @@ const Screen = () => {
       showsVerticalScrollIndicator={false}
     >
       {screens.map((screen, index) => ((
-        <View
+        <GroupSection
           key={index}
-          style={[
-            styles.screenContainer,
-            index === screens.length - 1 ? { paddingBottom: 12 } : {}
-          ]}
+          title={screen.title}
         >
-          <Text style={[styles.title, { color: colors.neutral.mid }]}>{screen.title}</Text>
           <View style={[styles.routeContainer, { borderColor: colors.core.border }]}>
             {screen.routes.map((route, index) => (
               <Route
@@ -31,7 +27,7 @@ const Screen = () => {
               />
             ))}
           </View>
-        </View>
+        </GroupSection>
       )))}
     </ScrollView>
   )
@@ -42,15 +38,6 @@ export default Screen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  screenContainer: {
-    rowGap: 8,
-    paddingInline: 8,
-    paddingTop: 12,
-  },
-  title: {
-    textTransform: "capitalize",
-    fontSize: 12
   },
   routeContainer: {
     borderWidth: 1,
