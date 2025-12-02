@@ -34,6 +34,7 @@ export default function TabLayout() {
             borderBottomWidth: 0,
             borderTopWidth: .5,
             borderTopColor: colors.core.border,
+            height: 52
           },
         }}>
         <Tabs.Screen
