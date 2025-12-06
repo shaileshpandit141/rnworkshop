@@ -8,7 +8,7 @@ export default {
       tab: "#f9f9f9",
       border: "#e6e6e6",
       divider: "#0b12200f",
-      shadow: "#10182814",
+      shadow: "#1018286c",
     },
     brand: {
       primary: "#2563eb",
@@ -56,7 +56,7 @@ export default {
       tab: "#0f0f0f",
       border: "#1f2937",
       divider: "#f8fafc0a",
-      shadow: "#020617cc",
+      shadow: "#b0b1b69f",
     },
     brand: {
       primary: "#60a5fa",
