@@ -9,16 +9,16 @@ import Animated, {
   withTiming,
 } from "react-native-reanimated";
 
-export interface Segment {
-  title: string;
-  value: string;
+export interface Segment<T = string, V = string> {
+  title: T;
+  value: V;
   icon?: keyof typeof Ionicons.glyphMap;
 }
 
 interface SegmentedButtonProps {
   segments: Segment[];
   value: string;
-  onChange: (value: string) => void;
+  onChange: (value: any) => void;
 }
 
 export function SegmentedButton({ segments, value, onChange }: SegmentedButtonProps) {
