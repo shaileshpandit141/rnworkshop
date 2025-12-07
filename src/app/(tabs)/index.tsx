@@ -2,9 +2,8 @@ import Route from '@/components/Route';
 import { GroupSection, View } from '@/components/ui';
 import useColors from '@/hooks/useColors';
 import screens from '@/screens';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
-
 
 const Screen = () => {
   const colors = useColors();
@@ -17,7 +16,7 @@ const Screen = () => {
         <GroupSection
           key={index}
           title={screen.title}
-          containerStyle={{paddingBottom: 12}}
+          containerStyle={{ paddingBottom: 12 }}
         >
           <View style={[styles.routeContainer, { borderColor: colors.core.border }]}>
             {screen.routes.map((route, index) => (

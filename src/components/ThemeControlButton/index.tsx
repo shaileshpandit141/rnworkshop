@@ -19,7 +19,9 @@ export default function ThemeControlButton() {
       <SegmentedButton
         segments={segments}
         value={selected}
-        onChange={(value: ValueType) => { setSelected(value) }}
+        onChange={(value: ValueType) => {
+          setSelected(value)
+        }}
       />
     </GroupSection>
   )
