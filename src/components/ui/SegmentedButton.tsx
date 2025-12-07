@@ -1,7 +1,7 @@
 import useColors from "@/hooks/useColors";
 import { Ionicons } from "@expo/vector-icons";
 import React, { useEffect, useState } from "react";
-import { Pressable, StyleSheet } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
@@ -46,7 +46,7 @@ export function SegmentedButton({ segments, value, onChange }: SegmentedButtonPr
     <View
       style={[
         styles.segmentedButtonContainer,
-        { backgroundColor: colors.core.surface, shadowColor: colors.core.shadow },
+        { backgroundColor: colors.core.surface, borderColor: colors.core.border },
       ]}
     >
       <View
@@ -61,7 +61,7 @@ export function SegmentedButton({ segments, value, onChange }: SegmentedButtonPr
           ]}
         />
         {segments.map((segment, index) => (
-          <Pressable
+          <TouchableOpacity
             key={segment.value}
             style={[styles.segment, { width: itemWidth }]}
             onPress={() => onChange(segment.value)}
@@ -70,7 +70,7 @@ export function SegmentedButton({ segments, value, onChange }: SegmentedButtonPr
               <Ionicons name={segment.icon} size={12} color={colors.neutral.light} />
             )}
             <Text style={styles.title}>{segment.title}</Text>
-          </Pressable>
+          </TouchableOpacity>
         ))}
       </View>
     </View>
@@ -81,15 +81,16 @@ const styles = StyleSheet.create({
   segmentedButtonContainer: {
     width: "100%",
     overflow: "hidden",
-    padding: 4,
-    borderRadius: 12,
-    elevation: 2,
+    padding: 2,
+    borderRadius: 10,
+    borderWidth: 1
   },
   segmentedItemsContainer: {
     position: "relative",
     flexDirection: "row",
     alignItems: "center",
     width: "100%",
+    height: "auto",
   },
   selected: {
     position: "absolute",
