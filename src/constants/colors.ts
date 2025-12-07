@@ -50,11 +50,11 @@ export default {
   dark: {
     core: {
       foreground: "#f8fafc",
-      background: "#01040aff",
+      background: "#000000ff",
       surface: "#0f0f0f",
       header: "#0f0f0f",
       tab: "#0f0f0f",
-      border: "#1f2937",
+      border: "#191919",
       divider: "#f8fafc0a",
       shadow: "#b0b1b69f",
     },
