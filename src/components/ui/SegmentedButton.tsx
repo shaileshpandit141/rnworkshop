@@ -1,4 +1,3 @@
-import { Text, View } from "@/components/ui";
 import useColors from "@/hooks/useColors";
 import { Ionicons } from "@expo/vector-icons";
 import React, { useEffect, useState } from "react";
@@ -8,6 +7,8 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from "react-native-reanimated";
+import { Text } from "./Text";
+import { View } from "./View";
 
 export interface Segment<T = string, V = string> {
   title: T;

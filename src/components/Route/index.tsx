@@ -1,5 +1,5 @@
 import useColors from "@/hooks/useColors";
-import { Route as TRoute } from "@/screens";
+import { Route as TRoute } from "@/src/screens";
 import { Ionicons } from "@expo/vector-icons";
 import { Link } from "expo-router";
 import React from 'react';
