@@ -1,11 +1,12 @@
-import { Text, View } from '@/components/ui';
+import ThemeControlButton from '@/components/ThemeControlButton';
+import { View } from '@/components/ui';
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
 const SettingsScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>settings</Text>
+      <ThemeControlButton />
     </View>
   )
 }
@@ -15,7 +16,7 @@ export default SettingsScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
+    padding: 12,
+    rowGap: 12,
+  },
 })
