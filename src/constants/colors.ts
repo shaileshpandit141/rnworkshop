@@ -1,8 +1,8 @@
 export default {
   light: {
     core: {
-      foreground: "#0b1220",
       background: "#ffffff",
+      foreground: "#0b1220",
       surface: "#f9f9f9",
       header: "#f9f9f9",
       tab: "#f9f9f9",
@@ -49,8 +49,8 @@ export default {
 
   dark: {
     core: {
-      foreground: "#f8fafc",
       background: "#000000ff",
+      foreground: "#f8fafc",
       surface: "#0f0f0f",
       header: "#0f0f0f",
       tab: "#0f0f0f",
