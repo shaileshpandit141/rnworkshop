@@ -1,7 +1,7 @@
 import colors from "@/constants/colors";
-import { useColorScheme } from "@/hooks/useColorScheme";
+import { useColorScheme } from "@/context/colorSchemeContext";
 
 export default function useColors() {
-  const colorScheme = useColorScheme();
-  return colors[colorScheme ?? "light"];
+  const { resolvedScheme } = useColorScheme();
+  return colors[resolvedScheme];
 }

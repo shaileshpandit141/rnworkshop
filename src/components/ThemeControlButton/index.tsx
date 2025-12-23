@@ -1,5 +1,6 @@
 import { GroupSection, Segment, SegmentedButton } from '@/components/ui';
-import React, { useState } from 'react';
+import { useColorScheme } from '@/context/colorSchemeContext';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
 
 type TitleType = "System" | "Dark" | "Light";
@@ -12,7 +13,10 @@ const segments: Segment<TitleType, ValueType>[] = [
 ]
 
 export default function ThemeControlButton() {
-  const [selected, setSelected] = useState<ValueType>("system")
+  const { resolvedScheme, scheme, switchSchemeTo } = useColorScheme();
+  const [selected, setSelected] = useState<ValueType>(
+    scheme === "system" ? "system" : resolvedScheme
+  );
 
   return (
     <GroupSection title="Theme">
@@ -20,7 +24,8 @@ export default function ThemeControlButton() {
         segments={segments}
         value={selected}
         onChange={(value: ValueType) => {
-          setSelected(value)
+          setSelected(value);
+          switchSchemeTo(value)
         }}
       />
     </GroupSection>
