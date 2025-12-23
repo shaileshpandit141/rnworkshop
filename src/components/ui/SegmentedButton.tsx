@@ -1,7 +1,7 @@
 import useColors from "@/hooks/useColors";
 import { Ionicons } from "@expo/vector-icons";
 import React, { useEffect, useState } from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet, Pressable } from "react-native";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
@@ -60,8 +60,8 @@ export function SegmentedButton({ segments, value, onChange }: SegmentedButtonPr
             { backgroundColor: colors.overlay.heavy },
           ]}
         />
-        {segments.map((segment, index) => (
-          <TouchableOpacity
+        {segments.map((segment) => (
+          <Pressable
             key={segment.value}
             style={[styles.segment, { width: itemWidth }]}
             onPress={() => onChange(segment.value)}
@@ -70,7 +70,7 @@ export function SegmentedButton({ segments, value, onChange }: SegmentedButtonPr
               <Ionicons name={segment.icon} size={12} color={colors.neutral.light} />
             )}
             <Text style={styles.title}>{segment.title}</Text>
-          </TouchableOpacity>
+          </Pressable>
         ))}
       </View>
     </View>
