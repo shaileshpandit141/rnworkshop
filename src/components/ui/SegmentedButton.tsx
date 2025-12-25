@@ -1,7 +1,7 @@
 import useColors from "@/hooks/useColors";
 import { Ionicons } from "@expo/vector-icons";
 import React, { useEffect, useState } from "react";
-import { StyleSheet, Pressable } from "react-native";
+import { StyleSheet, Pressable, ViewStyle } from "react-native";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
@@ -19,10 +19,11 @@ export interface Segment<T = string, V = string> {
 interface SegmentedButtonProps {
   segments: Segment[];
   value: string;
+  borderRadius?: ViewStyle["borderRadius"];
   onChange: (value: any) => void;
 }
 
-export function SegmentedButton({ segments, value, onChange }: SegmentedButtonProps) {
+export function SegmentedButton({ segments, value, borderRadius = 0, onChange }: SegmentedButtonProps) {
   const colors = useColors();
   const [width, setWidth] = useState(0);
 
@@ -46,7 +47,11 @@ export function SegmentedButton({ segments, value, onChange }: SegmentedButtonPr
     <View
       style={[
         styles.segmentedButtonContainer,
-        { backgroundColor: colors.core.surface, borderColor: colors.core.border },
+        {
+          backgroundColor: colors.core.surface,
+          borderRadius: borderRadius,
+          borderColor: colors.core.border,
+        },
       ]}
     >
       <View
@@ -57,13 +62,22 @@ export function SegmentedButton({ segments, value, onChange }: SegmentedButtonPr
           style={[
             styles.selected,
             animatedStyle,
-            { backgroundColor: colors.overlay.heavy },
+            {
+              backgroundColor: colors.overlay.heavy,
+              borderRadius: borderRadius,
+            },
           ]}
         />
         {segments.map((segment) => (
           <Pressable
             key={segment.value}
-            style={[styles.segment, { width: itemWidth }]}
+            style={[
+              styles.segment,
+              {
+                width: itemWidth,
+                borderRadius: borderRadius,
+              }
+            ]}
             onPress={() => onChange(segment.value)}
           >
             {segment.icon && (
@@ -81,8 +95,7 @@ const styles = StyleSheet.create({
   segmentedButtonContainer: {
     width: "100%",
     overflow: "hidden",
-    padding: 2,
-    borderRadius: 10,
+    padding: 1,
     borderWidth: 1
   },
   segmentedItemsContainer: {
@@ -96,7 +109,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     zIndex: -1,
     height: "100%",
-    borderRadius: 8,
+    borderRadius: 100,
   },
   segment: {
     flexDirection: "row",
@@ -104,7 +117,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     gap: 6,
     padding: 6,
-    borderRadius: 8,
   },
   title: {
     textTransform: "capitalize",

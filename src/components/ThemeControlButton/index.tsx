@@ -23,6 +23,7 @@ export default function ThemeControlButton() {
       <SegmentedButton
         segments={segments}
         value={selected}
+        borderRadius={100}
         onChange={(value: ValueType) => {
           setSelected(value);
           switchSchemeTo(value)
